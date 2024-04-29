@@ -1,4 +1,5 @@
 #include <iostream>
+#include <sstream>
 using namespace std;
 
 class Complex {
@@ -11,8 +12,8 @@ public:
     Complex() : a(0), b(0) {}
 
     // Parameterized constructor
-    Complex(double a_val, double b_val) : a(a_val), b(b_val) {}
-
+    Complex(double aVal, double bVal) : a(aVal), b(bVal) {}
+    //Copy cunstructor
     Complex(const Complex& other) {
         a = other.a;
         b = other.b;
@@ -37,12 +38,16 @@ public:
     void setB(double value) {
         b = value;
     }
-
+    //To string method
+    string toString() const {
+        return to_string(a) + " "+ to_string(b) + "i";
+    }
     // Friend functions for operations
     friend Complex multiply(const Complex& obj1, const Complex& obj2);
     friend Complex divide(const Complex& obj1, const Complex& obj2);
     friend Complex add(const Complex& obj1, const Complex& obj2);
     friend Complex subtract(const Complex& obj1, const Complex& obj2);
+    friend Complex power(const Complex& obj , int exp);
 };
 
 // Multiplication function
@@ -72,20 +77,32 @@ Complex subtract(const Complex& obj1, const Complex& obj2) {
     double new_b = obj1.b - obj2.b;
     return Complex(new_a, new_b);
 }
+Complex power(const Complex& obj, int exp){
+    double new_a = obj.a * obj.a;
+    double new_b= obj.b * obj.b;
+    for(int i=1 ; i<exp ;i++ ){
+        new_a *= obj.a;
+        new_a *= obj.b;
+    }
+    return Complex(new_a , new_b);
+}
 
 int main() {
     Complex obj1(2, 3);
     Complex obj2(2, 2);
 
-    Complex result_multiply = multiply(obj1, obj2);
-    Complex result_divide = divide(obj1, obj2);
-    Complex result_add = add(obj1, obj2);
-    Complex result_subtract = subtract(obj1, obj2);
+    Complex resMultiply = multiply(obj1, obj2);
+    Complex resDivide = divide(obj1, obj2);
+    Complex resAdd = add(obj1, obj2);
+    Complex resSub = subtract(obj1, obj2);
+    Complex resPowA = power(obj1, 3);
+    Complex resPowB = power(obj2, 3);
 
-    cout << "Multiplication: a = " << result_multiply.getA() << ", b = " << result_multiply.getB() << endl;
-    cout << "Division: a = " << result_divide.getA() << ", b = " << result_divide.getB() << endl;
-    cout << "Addition: a = " << result_add.getA() << ", b = " << result_add.getB() << endl;
-    cout << "Subtraction: a = " << result_subtract.getA() << ", b = " << result_subtract.getB() << endl;
+    cout << "Multiplication:" << resMultiply.toString() << endl;
+    cout << "Division: a = " << resDivide.toString() << endl;
+    cout << "Addition: a = " << resAdd.toString() << endl;
+    cout << "Subtraction: a = " << resSub.toString() << endl;
+    cout << "Power of a = "<< resPowA.toString()<<endl;
 
     return 0;
 }
