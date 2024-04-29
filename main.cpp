@@ -12,12 +12,12 @@ int main() {
     Complex resPowA = power(obj1, 3);
     Complex resPowB = power(obj2, 3);
 
-    std::cout << "Multiplication: " << resMultiply.toString() << std::endl;
-    std::cout << "Division: " << resDivide.toString() << std::endl;
-    std::cout << "Addition: " << resAdd.toString() << std::endl;
-    std::cout << "Subtraction: " << resSub.toString() << std::endl;
-    std::cout << "Power of a = " << resPowA.toString() << std::endl;
-    std::cout << "Power of b = " << resPowB.toString() << std::endl;
+    cout << "Multiplication: " << resMultiply.toString() << endl;
+    cout << "Division: " << resDivide.toString() << endl;
+    cout << "Addition: " << resAdd.toString() << endl;
+    cout << "Subtraction: " << resSub.toString() << endl;
+    cout << "Power of a = " << resPowA.toString() << endl;
+    cout << "Power of b = " << resPowB.toString() << endl;
 
     return 0;
 }
