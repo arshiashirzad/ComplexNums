@@ -13,6 +13,11 @@ public:
     // Parameterized constructor
     Complex(double a_val, double b_val) : a(a_val), b(b_val) {}
 
+    Complex(const Complex& other) {
+        a = other.a;
+        b = other.b;
+    }
+
     // Getter for variable 'a'
     double getA() const {
         return a;
