@@ -37,6 +37,12 @@ public:
     void setB(double value) {
         b = value;
     }
+
+    // Friend functions for operations
+    friend Complex multiply(const Complex& obj1, const Complex& obj2);
+    friend Complex divide(const Complex& obj1, const Complex& obj2);
+    friend Complex add(const Complex& obj1, const Complex& obj2);
+    friend Complex subtract(const Complex& obj1, const Complex& obj2);
 };
 int main() {
     return 0;
