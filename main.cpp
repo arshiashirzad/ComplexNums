@@ -40,7 +40,9 @@ public:
     }
     //To string method
     string toString() const {
-        return to_string(a) + " "+ to_string(b) + "i";
+        stringstream ss;
+        ss << a<< "+" << b <<"i";
+        return ss.str();
     }
     // Friend functions for operations
     friend Complex multiply(const Complex& obj1, const Complex& obj2);
