@@ -1,0 +1,3 @@
+/Users/arshia/CLionProjects/ComplexNums/cmake-build-debug/CMakeFiles/ComplexNums.dir
+/Users/arshia/CLionProjects/ComplexNums/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/arshia/CLionProjects/ComplexNums/cmake-build-debug/CMakeFiles/rebuild_cache.dir
