@@ -55,6 +55,12 @@ build CMakeFiles/ComplexNums.dir/main.cpp.o: CXX_COMPILER__ComplexNums_unscanned
   OBJECT_DIR = CMakeFiles/ComplexNums.dir
   OBJECT_FILE_DIR = CMakeFiles/ComplexNums.dir
 
+build CMakeFiles/ComplexNums.dir/Complex.cpp.o: CXX_COMPILER__ComplexNums_unscanned_Debug /Users/arshia/CLionProjects/ComplexNums/Complex.cpp || cmake_object_order_depends_target_ComplexNums
+  DEP_FILE = CMakeFiles/ComplexNums.dir/Complex.cpp.o.d
+  FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
+  OBJECT_DIR = CMakeFiles/ComplexNums.dir
+  OBJECT_FILE_DIR = CMakeFiles/ComplexNums.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target ComplexNums
@@ -63,7 +69,7 @@ build CMakeFiles/ComplexNums.dir/main.cpp.o: CXX_COMPILER__ComplexNums_unscanned
 #############################################
 # Link the executable ComplexNums
 
-build ComplexNums: CXX_EXECUTABLE_LINKER__ComplexNums_Debug CMakeFiles/ComplexNums.dir/main.cpp.o
+build ComplexNums: CXX_EXECUTABLE_LINKER__ComplexNums_Debug CMakeFiles/ComplexNums.dir/main.cpp.o CMakeFiles/ComplexNums.dir/Complex.cpp.o
   FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk
   OBJECT_DIR = CMakeFiles/ComplexNums.dir
   POST_BUILD = :
